@@ -10,14 +10,14 @@ use crate::entity::faucet::Faucet;
 pub struct FaucetRequestDto {
     #[validate(length(min = 1, max = 128, message = "Invalid solution"))]
     pub solution: String,
-    #[validate(length(equal = 32, message = "Invalid challenge"))]
+    #[validate(length(equal = 32, message = "Invalid update"))]
     pub challenge: String,
-    #[validate(length(equal = 64, message = "Invalid proof"))]
+    #[validate(length(equal = 64, message = "Invalid POW"))]
     pub tag: String,
     pub transfer: Transfer,
-    #[validate(length(max = 256, message = "Invalid player id"))]
+    #[validate(length(max = 256, message = "Invalid pk id"))]
     pub player_id: String,
-    #[validate(length(max = 256, message = "Invalid challenge signature"))]
+    #[validate(length(max = 256, message = "Invalid update signature"))]
     pub challenge_signature: String,
 }
 

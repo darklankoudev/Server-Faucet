@@ -15,7 +15,7 @@ pub enum FaucetError {
     DuplicateChallenge,
     #[error("Invalid address")]
     InvalidAddress,
-    #[error("Invalid pk")]
+    #[error("Invalid public key")]
     InvalidPublicKey,
     #[error("Invalid signature")]
     InvalidSignature,
@@ -29,7 +29,9 @@ pub enum FaucetError {
     // InvalidWithdrawLimit(u64),
     // #[error("Public key {0} does not belong to a shielded expedition player")]
     // NotPlayer(String),
-    #[error("Slowly, slowly, my friend")]
+    // #[error("Please come back after 24 hours if you want to receive more")]
+    // TooManyRequests,
+    #[error("Please come back after a few minutes")]
     TooManyRequests,
 }
 

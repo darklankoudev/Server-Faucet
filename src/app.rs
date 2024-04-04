@@ -122,9 +122,9 @@ impl ApplicationServer {
             );
 
             Router::new()
-                .route("/faucet/setting", get(faucet_handler::faucet_settings))
+                .route("/faucet/rules", get(faucet_handler::faucet_settings))
                 .route(
-                    "/faucet/challenge/:player_id",
+                    "/faucet/update/:player_id",
                     get(faucet_handler::request_challenge),
                 )
                 .route("/faucet", post(faucet_handler::request_transfer))
@@ -140,7 +140,7 @@ impl ApplicationServer {
             .allow_methods(Any)
             .allow_headers(Any);
 
-        let router = Router::new().nest("/api/v1", routes).layer(
+        let router = Router::new().nest("/api/se", routes).layer(
             ServiceBuilder::new()
                 .layer(TraceLayer::new_for_http())
                 .layer(HandleErrorLayer::new(Self::handle_timeout_error))

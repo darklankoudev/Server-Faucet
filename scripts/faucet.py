@@ -2,7 +2,7 @@ from requests import get, post
 from hashlib import sha256
 import argparse
 
-DEFAULT_URL = "http://0.0.0.0:5000/api/v1/faucet"
+DEFAULT_URL = "http://0.0.0.0:5000/api/se/faucet"
 
 def request_challenge(url):
     return get(url).json()

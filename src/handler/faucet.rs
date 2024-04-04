@@ -54,9 +54,9 @@ pub async fn request_challenge(
 ) -> Result<Json<FaucetResponseDto>, ApiError> {
     tracing::info!("Challenge request from {}", player_id);
     let client = reqwest::Client::new();
-    let req = client
+    let _req = client
         .get(format!(
-            "https://{}/api/v1/player/exists/{}",
+            "https://{}/api/se/player/exists/{}",
             state.webserver_host, player_id
         ))
         .header(USER_AGENT, "Mozilla/5.0 (X11; CrOS x86_64 8172.45.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.64 Safari/537.36")
